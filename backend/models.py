@@ -7,3 +7,7 @@ class Translation(models.Model):
     language = models.CharField(max_length=50)
     translation = models.CharField(max_length=500)
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-timestamp']
+
