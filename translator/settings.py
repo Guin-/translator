@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # django apps
     'rest_framework',
-    'debug_toolbar',
+    #'debug_toolbar',
 
     # local apps
     'backend',
