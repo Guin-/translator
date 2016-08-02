@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = function () {
   var config = {};
@@ -31,7 +32,7 @@ module.exports = function () {
       { test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
-      { test: /\.(png|jpg|jpeg|gif|svg)$/,
+      { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'file'
       },
       { test: /\.html$/,
@@ -45,7 +46,8 @@ module.exports = function () {
     new HtmlWebpackPlugin({
       template: './src/public/index.html',
       inject: 'body'
-      })
+      }),
+    new ExtractTextPlugin('[name].[hash].css')
   );
 
   config.devServer = {
