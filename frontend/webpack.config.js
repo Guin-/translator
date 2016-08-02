@@ -7,13 +7,13 @@ module.exports = function () {
 
   // app import chain starts here
   config.entry = {
-    app: './app/app.js',
+    app: './src/app/app.js',
   };
 
   // location of written bundled files
   config.output = {
     path: __dirname + 'dist/',
-    publicPath: 'http:localhost:8080/',
+    publicPath: 'http://localhost:8080/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   };
@@ -21,12 +21,9 @@ module.exports = function () {
 
   config.module = {
     loaders: [
-      { test: /\.js?$/,
+      { test: /\.js$/,
+        loader: 'babel',
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
       },
       { test: /\.html$/,
         loader: 'raw'
@@ -37,13 +34,13 @@ module.exports = function () {
   config.plugins = [];
   config.plugins.push(
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './src/public/index.html',
       inject: 'body'
       })
   );
 
   config.devServer = {
-    contentBase: './public',
+    contentBase: './src/public',
     stats: 'minimal'
   };
 
