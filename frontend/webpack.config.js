@@ -25,6 +25,15 @@ module.exports = function () {
         loader: 'babel',
         exclude: /node_modules/,
       },
+      { test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      },
+      { test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      { test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'file'
+      },
       { test: /\.html$/,
         loader: 'raw'
       }
