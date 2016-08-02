@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var autoprefixer = require("autoprefixer");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -49,6 +50,12 @@ module.exports = function () {
       }),
     new ExtractTextPlugin('[name].[hash].css')
   );
+
+  config.postcss = [
+    autoprefixer({
+      browsers: ['last 2 versions']
+    })
+  ];
 
   config.devServer = {
     contentBase: './src/public',

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Guin-/translator",
   "devDependencies": {
+    "autoprefixer": "^6.3.7",
     "babel": "^6.5.2",
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
