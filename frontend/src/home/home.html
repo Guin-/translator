@@ -1,3 +1,12 @@
 <div id="home-header" class="jumbotron">
   <h1> Welcome to the {{ home.name }}</h1>
 </div>
+<div>
+  <form name="inputForm" class="input-form" ng-submit="home.submit()">
+    <div class="row">
+      <textarea name="inputText" placeholder="Enter text to be translated" required>
+      </textarea>
+    </div>
+    <input type="submit" class="btn btn-primary" role="button" value="Translate">
+  </form>
+</div>
