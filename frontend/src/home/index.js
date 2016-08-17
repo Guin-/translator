@@ -9,7 +9,7 @@ import './home.css'
 
 export default angular.module('app.home', [uirouter])
   .config(routing)
-  .controller('HomeController', HomeController)
   .service('TranslationsService', TranslationsService)
+  .controller('HomeController', HomeController)
   .controller('TranslationsController', TranslationsController)
   .name;
