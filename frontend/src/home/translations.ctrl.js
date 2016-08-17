@@ -1,10 +1,14 @@
 export default class TranslationsController {
-  constructor($scope, TranslationsService) {
-    this.name = 'Translations List';
+  constructor(TranslationsService) {
     this.translationsData = [];
 
-    TranslationsService.getData().then( result => this.translationsData = result);
+    TranslationsService.getData()
+      .then((response) => {
+        this.translationsData = response.data;
+        console.log(this.translationsData);
+      });
+
   }
 }
 
-TranslationsController.$inject = ['$scope', 'TranslationsService'];
+TranslationsController.$inject = ['TranslationsService'];
