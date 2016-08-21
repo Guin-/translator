@@ -7,12 +7,10 @@ export default class TranslationsService {
   getData () {
     return this.$http.get(this.apiUrl);
   }
-/*
-  postData () {
-    return this.$http.post(this.apiUrl, { input_text: 'input_text'})
-      .then((response) => {
-        console.log(response);
-      });
+
+  postData (input_text) {
+    return this.$http.post(this.apiUrl, {input_text: input_text});
   }
-*/
 }
+
+TranslationsService.$inject = ['$http'];
