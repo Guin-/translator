@@ -1,12 +1,17 @@
-<div id="home-header" class="jumbotron">
+<div class="page-header jumbotron">
   <h1>Welcome to the Translator</h1>
 </div>
 <div>
-  <form name="inputForm" class="input-form">
-    <div class="row">
-      <textarea name="inputText" ng-model="inputText" placeholder="Enter text to be translated" required>
-      </textarea>
+  <form name="inputForm" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputText" class="col-sm-1 control-label">Source Text</label>
+      <div class="col-sm-8">
+        <textarea name="inputText" class="form-control" rows="5" ng-model="inputText" placeholder="Enter text to be translated" required>
+        </textarea>
+      </div>
     </div>
-    <input type="submit" class="btn btn-primary" value="Translate" ng-click="home.submit()">
-  </form>
-</div>
+    <div class="col-sm-offset-1">
+      <input type="submit" class="btn btn-primary" value="Translate" ng-click="home.submit()">
+    </div>
+    </form>
+  </div>
